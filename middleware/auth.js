@@ -6,7 +6,8 @@ let auth = (req, res, next) => {
         if (err) throw err;
         if (!user) return res.json({
             error: true,
-            isAuth: false
+            isAuth: false,
+            message: "You are already Logged out."
         });
         req.token = token;
         req.user = user;

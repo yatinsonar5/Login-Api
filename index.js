@@ -19,7 +19,7 @@ app.use(cookieparser());
 require("dotenv").config();
 
 //Database connection:
-// const uri = process.env.ATLAS_URI;
+
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -27,12 +27,7 @@ const connection = mongoose.connection;
 connection.once("open", () => {
 console.log("Connected Database Successfully");
 });
-mongoose.Promise = global.Promise;
-
-// mongoose.connect(db.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true }, function(err){
-//     if (err) console.log(err);
-//     console.log("Database is Connected");
-// })
+// mongoose.Promise = global.Promise;
 
 app.get("/", function(res,req){
     res.status(200).send("Welcome to Login Page, Login API")
@@ -120,7 +115,7 @@ app.get("/api/logout",auth,function(req,res) {
 })
 
 //Listning on port:
-const PORT=process.env.PORT||8000;
-app.listen(PORT, () => {
-    console.log("App is live at", PORT);
+// const PORT=process.env.PORT||8000;
+app.listen(process.env.PORT||8000, () => {
+    console.log("App is live at", process.env.PORT||8000);
 });
