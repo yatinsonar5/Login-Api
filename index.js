@@ -115,7 +115,7 @@ app.get("/api/logout",auth,function(req,res) {
 })
 
 //Listning on port:
-// const PORT=process.env.PORT||8000;
-app.listen(process.env.PORT||8000, () => {
-    console.log("App is live at", process.env.PORT||8000);
+const PORT=process.env.PORT || 8000;
+app.listen(PORT, () => {
+    console.log("App is live at:", PORT);
 });
