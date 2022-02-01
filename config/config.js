@@ -9,7 +9,6 @@ const config = {
 
     default: {
         SECRET: "mysecretkey",
-        // DATABASE: "mongodb://localhost:27017/Users"
         DATABASE: "mongodb+srv://login-api:s6954ZAFLQ0ozAwn@cluster0.wmqic.mongodb.net/login-api?retryWrites=true&w=majority"
     }
 }
